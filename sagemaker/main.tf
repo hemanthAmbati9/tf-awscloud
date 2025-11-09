@@ -29,7 +29,7 @@ resource "aws_iam_role_policy_attachment" "sagemaker_logs_access" {
 # --- SageMaker Notebook Instance (Free Tier) ---
 resource "aws_sagemaker_notebook_instance" "free_tier_notebook" {
   name               = "free-tier-notebook"
-  instance_type      = "ml.t2.micro"  # Free tier eligible
+  instance_type      = "ml.t2.medium"  # Free tier eligible
   role_arn           = aws_iam_role.sagemaker_execution_role.arn
   direct_internet_access = "Enabled"
 
